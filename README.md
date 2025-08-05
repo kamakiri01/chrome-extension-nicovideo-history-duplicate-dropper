@@ -2,6 +2,7 @@
 
 ## Usage
 
+- Download app from GitHub Release
 - Go to `chrome://extensions`
 - enable Developer mode
 - Load unpacked, choose this app dir

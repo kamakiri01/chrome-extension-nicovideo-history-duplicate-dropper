@@ -17,6 +17,7 @@
         "README.md",
         "package.json",
         "lib",
+        "image",
         "popup.html",
         "manifest.json"
     ]

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Nico Video History Cleaner",
+  "name": "Nicovideo history unifier",
   "version": "1.0",
   "description": "Hide duplicate video entries in Nico Video history.",
   "permissions": [
@@ -19,6 +19,9 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Nico Video History Cleaner"
+    "default_title": "Nico Video History Cleaner",
+    "default_icon": {
+      "19": "image/chrome-extension-nicovideo-icon_on.png"
+    }
   }
 }

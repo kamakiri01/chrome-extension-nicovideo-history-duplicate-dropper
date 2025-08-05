@@ -9,18 +9,17 @@ type HistoryHolder = Map<string, VideoDoWrapper[]> // key: 日付
 const holder: HistoryHolder = new Map();
 
 function run() {
-    console.log("run", holder)
     // Check if we're on the correct page
-    if (!window.location.href.startsWith('https://www.nicovideo.jp/my/history/video')) {
+    if (!window.location.href.startsWith("https://www.nicovideo.jp/my/history/video")) {
         return;
     }
 
     // Get the main container
-    const dayChunksContainer = document.querySelector('.VideoWatchHistoryContainer-dayChunks');
+    const dayChunksContainer = document.querySelector(".VideoWatchHistoryContainer-dayChunks");
     if (!dayChunksContainer) return;
 
     // Get all day chunk elements
-    const dayChunks = dayChunksContainer.querySelectorAll('.VideoWatchHistoryContainer-dayChunk');
+    const dayChunks = dayChunksContainer.querySelectorAll(".VideoWatchHistoryContainer-dayChunk");
 
     dayChunks.forEach(chunk => {
         const h2 = dayChunks[0].querySelector("h2");
@@ -101,13 +100,10 @@ function setOberver() {
     const callback = function (mutationsList: any, observer: any) {
         console.log("callback");
         for (const mutation of mutationsList) {
-            if (mutation.type === 'childList') {
-                console.log('A child node has been added or removed.');
-                // ここにDOM更新時に実行したい関数を記述
-                // 例: checkDOMChanges();
+            if (mutation.type === "childList") {
                 run();
-            } else if (mutation.type === 'attributes') {
-                console.log('The ' + mutation.attributeName + ' attribute was modified.');
+            } else if (mutation.type === "attributes") {
+                console.log(`The ${mutation.attributeName}  attribute was modified.`);
             }
         }
     };
@@ -120,9 +116,7 @@ function setOberver() {
 let isCurrentEnable = false;
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.action === 'toggle') {
-        // Update the state
-        console.log("request.enabled", request.enabled);
+    if (request.action === "toggle") {
         if (request.enabled) {
             if (!observer) setOberver();
             run();
@@ -138,7 +132,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 window.addEventListener("load", () => {
     console.log("DOMContentLoaded");
-    chrome.storage.sync.get(['enabled'], function (result) {
+    chrome.storage.sync.get(["enabled"], function (result) {
         const isEnabled = result.enabled !== false;
         if (isEnabled && !observer) setOberver();
     });

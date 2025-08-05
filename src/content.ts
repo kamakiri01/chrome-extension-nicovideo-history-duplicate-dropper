@@ -29,7 +29,7 @@ function run() {
         const lists = videoMediaObjectList.querySelectorAll(":scope > div");
         const eLists: HTMLDivElement[] = Array.from(lists) as HTMLDivElement[];
 
-        let currents: VideoDoWrapper[] = holder.get(date);
+        const currents: VideoDoWrapper[] = holder.get(date);
         if (currents) { // 過去の取得が存在する（そのdateのすべてがあるとは限らない）
             eLists.forEach(dom => {
                 const id = getVideoIdFromDom(dom);
@@ -113,9 +113,8 @@ function setOberver() {
     console.log("setOberver done");
 }
 
-let isCurrentEnable = false;
 // Listen for messages from popup
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, _sender, _sendResponse) {
     if (request.action === "toggle") {
         if (request.enabled) {
             if (!observer) setOberver();

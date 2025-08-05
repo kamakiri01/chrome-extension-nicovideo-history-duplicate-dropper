@@ -4,12 +4,13 @@
     "lib": ["ESNext", "dom"],
     "noImplicitAny": true,
     "module": "commonjs" ,
-    "outDir": "./",
+    "outDir": "./lib",
     "allowUmdGlobalAccess": true,
     "types" : []
   },
   "files": [
     "./src/content.ts",
+    "./src/popup.ts",    
     "./node_modules/@types/chrome/index.d.ts",
   ]
 }

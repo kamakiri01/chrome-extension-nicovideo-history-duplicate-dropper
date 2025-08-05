@@ -1,9 +1,21 @@
 {
+    "name": "nicovideo-history-unifier",
+    "version": "0.0.1",
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "lint": "eslint -c eslint.config.mjs src/**/*.ts"
     },
     "devDependencies": {
         "@types/chrome": "^0.1.1",
-        "typescript": "^5.9.2"
-    }
+        "eslint": "^9.32.0",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.39.0"
+    },
+    "files": [
+        "README.md",
+        "package.json",
+        "lib",
+        "popup.html",
+        "manifest.json"
+    ]
 }

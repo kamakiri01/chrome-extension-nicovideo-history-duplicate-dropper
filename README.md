@@ -7,7 +7,6 @@
 - Load unpacked, choose this app dir
 - Go to `https://www.nicovideo.jp/my/history`
 
-
 ### uninstall
 
 - Go to `chrome://extensions`

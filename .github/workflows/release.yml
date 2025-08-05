@@ -38,7 +38,7 @@ jobs:
           prerelease: false
 
       - name: Create to reelase pack
-        run: npm pack
+        run: npm run zip
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # npmトークンをシークレットとして設定
 
@@ -49,6 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: 'nicovideo-history-unifier-${{ steps.get_version.outputs.VERSION }}.tgz' # tarballのパスを正確に指定
-          asset_name: 'nicovideo-history-unifier-${{ steps.get_version.outputs.VERSION }}.tgz'
+          asset_path: 'nicovideo-history-unifier.zip' # tarballのパスを正確に指定
+          asset_name: 'nicovideo-history-unifier-${{ steps.get_version.outputs.VERSION }}.zip'
           asset_content_type: 'application/gzip'

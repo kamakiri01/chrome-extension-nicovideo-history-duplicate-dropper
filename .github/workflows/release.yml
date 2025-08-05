@@ -1,9 +1,7 @@
-name: Publish Package to npm
+name: Publish Package to GitHub Release
 
 on:
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+' # "v1.0.0"のようなタグをトリガーにする
+  workflow_dispatch:
 
 jobs:
   build_and_publish:

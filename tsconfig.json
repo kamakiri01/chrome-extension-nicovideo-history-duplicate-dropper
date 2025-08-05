@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["ESNext", "dom"],
+    "noImplicitAny": true,
+    "module": "commonjs" ,
+    "outDir": "./",
+    "allowUmdGlobalAccess": true,
+    "types" : []
+  },
+  "files": [
+    "./src/content.ts",
+    "./node_modules/@types/chrome/index.d.ts",
+  ]
+}

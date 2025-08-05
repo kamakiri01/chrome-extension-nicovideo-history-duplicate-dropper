@@ -7,6 +7,7 @@
 - enable Developer mode
 - Load unpacked, choose this app dir
 - Go to `https://www.nicovideo.jp/my/history`
+- Toggle on/off from extension icon popup
 
 ### uninstall
 
